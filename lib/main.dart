@@ -1,5 +1,14 @@
 import 'package:flutter/material.dart';
 
+
+// import 'package:flutter_web/material.dart';
+import 'package:intl/intl.dart';
+// import 'package:timezone/browser.dart';
+// import 'package:timezone/timezone.dart';
+
+import "main.dart";
+import 'contdownpag.dart';
+
 void main() => runApp(MyApp());
 
 class MyApp extends StatelessWidget {
@@ -8,104 +17,346 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       title: 'Flutter Demo',
+      debugShowCheckedModeBanner: false,
       theme: ThemeData(
-        // This is the theme of your application.
-        //
-        // Try running your application with "flutter run". You'll see the
-        // application has a blue toolbar. Then, without quitting the app, try
-        // changing the primarySwatch below to Colors.green and then invoke
-        // "hot reload" (press "r" in the console where you ran "flutter run",
-        // or simply save your changes to "hot reload" in a Flutter IDE).
-        // Notice that the counter didn't reset back to zero; the application
-        // is not restarted.
-        primarySwatch: Colors.blue,
+        primarySwatch: Colors.pink,
       ),
-      home: MyHomePage(title: 'Flutter Demo Home Page'),
+      home: MyHomePage(title: 'Flutter - hour in Sydney and Florida'),
     );
   }
 }
 
-class MyHomePage extends StatefulWidget {
+//
+// ----------------- app start ---------------------------------
+//
+
+//
+// ----------------- functions ---------------------------------
+//
+
+//
+// ----------------- widgets ---------------------------------
+//
+class MyHomePage extends StatelessWidget {
   MyHomePage({Key key, this.title}) : super(key: key);
-
-  // This widget is the home page of your application. It is stateful, meaning
-  // that it has a State object (defined below) that contains fields that affect
-  // how it looks.
-
-  // This class is the configuration for the state. It holds the values (in this
-  // case the title) provided by the parent (in this case the App widget) and
-  // used by the build method of the State. Fields in a Widget subclass are
-  // always marked "final".
 
   final String title;
 
   @override
-  _MyHomePageState createState() => _MyHomePageState();
-}
-
-class _MyHomePageState extends State<MyHomePage> {
-  int _counter = 0;
-
-  void _incrementCounter() {
-    setState(() {
-      // This call to setState tells the Flutter framework that something has
-      // changed in this State, which causes it to rerun the build method below
-      // so that the display can reflect the updated values. If we changed
-      // _counter without calling setState(), then the build method would not be
-      // called again, and so nothing would appear to happen.
-      _counter++;
-    });
-  }
-
-  @override
   Widget build(BuildContext context) {
-    // This method is rerun every time setState is called, for instance as done
-    // by the _incrementCounter method above.
-    //
+    mudarPagina() {
+      Navigator.push(
+        context,
+        new MaterialPageRoute(builder: (context) => new SecondScreen()),
+      );
+    }
+
     // The Flutter framework has been optimized to make rerunning build methods
     // fast, so that you can just rebuild anything that needs updating rather
     // than having to individually change instances of widgets.
     return Scaffold(
       appBar: AppBar(
-        // Here we take the value from the MyHomePage object that was created by
-        // the App.build method, and use it to set our appbar title.
-        title: Text(widget.title),
+        title: Text(title),
       ),
-      body: Center(
-        // Center is a layout widget. It takes a single child and positions it
-        // in the middle of the parent.
-        child: Column(
-          // Column is also layout widget. It takes a list of children and
-          // arranges them vertically. By default, it sizes itself to fit its
-          // children horizontally, and tries to be as tall as its parent.
-          //
-          // Invoke "debug painting" (press "p" in the console, choose the
-          // "Toggle Debug Paint" action from the Flutter Inspector in Android
-          // Studio, or the "Toggle Debug Paint" command in Visual Studio Code)
-          // to see the wireframe for each widget.
-          //
-          // Column has various properties to control how it sizes itself and
-          // how it positions its children. Here we use mainAxisAlignment to
-          // center the children vertically; the main axis here is the vertical
-          // axis because Columns are vertical (the cross axis would be
-          // horizontal).
-          mainAxisAlignment: MainAxisAlignment.center,
-          children: <Widget>[
-            Text(
-              'You have pushed the button this many times:',
-            ),
-            Text(
-              '$_counter',
-              style: Theme.of(context).textTheme.display1,
-            ),
-          ],
+      body: Container(
+        child: BodyLayout(),
+      ),
+      floatingActionButton: Container(
+        height: 100.0,
+        width: 100.0,
+        child: FittedBox(
+          child: FloatingActionButton(
+            onPressed: () {
+              mudarPagina();
+              // Navigator.push(
+              //   context,
+              //   new MaterialPageRoute(builder: (context) => new SecondScreen()),
+              // );
+            },
+            child: DaysToTripIcon(),
+            // child: Text("50days"),
+          ),
         ),
       ),
-      floatingActionButton: FloatingActionButton(
-        onPressed: _incrementCounter,
-        tooltip: 'Increment',
-        child: Icon(Icons.add),
-      ), // This trailing comma makes auto-formatting nicer for build methods.
+
+      // floatingActionButton: FloatingActionButton(
+      //   onPressed: () {
+      //     // adicionaFuturo();
+      //   },
+      //   child: Text("50days"),
+      // ),
+
+      //palhacada para ficar no meio
+      // Row(
+      //   mainAxisAlignment: MainAxisAlignment.center,
+      //   children: <Widget>[
+      //     Column(
+      //       mainAxisAlignment: MainAxisAlignment.center,
+      //       children: <Widget>[
+      //         BodyLM()
+      //       ],
+      //     )
+      //   ],
+      // )
+
+      // Center(
+      //   // Center is a layout widget. It takes a single child and positions it
+      //   // in the middle of the parent.
+      //   child: Column(
+      //     // Column is also layout widget. It takes a list of children and
+      //     // arranges them vertically. By default, it sizes itself to fit its
+      //     // children horizontally, and tries to be as tall as its parent.
+      //     //
+      //     // Invoke "debug painting" (choose the "Toggle Debug Paint" action
+      //     // from the Flutter Inspector in Android Studio, or the "Toggle Debug
+      //     // Paint" command in Visual Studio Code) to see the wireframe for each
+      //     // widget.
+      //     //
+      //     // Column has various properties to control how it sizes itself and
+      //     // how it positions its children. Here we use mainAxisAlignment to
+      //     // center the children vertically; the main axis here is the vertical
+      //     // axis because Columns are vertical (the cross axis would be
+      //     // horizontal).
+      //     mainAxisAlignment: MainAxisAlignment.center,
+      //     children: <Widget>[
+      //       BodyLM(),
+      //     ],
+      //   ),
+      // ),
+      // This trailing comma makes auto-formatting nicer for build methods.
     );
   }
 }
+
+// ------pagina contagem---------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+class DaysToTripIcon extends StatelessWidget {
+  @override
+  Widget build(BuildContext context) {
+    var _timeAtual = addTimeTop(0, "Sydney", returnDate: true);
+    var _timeOfTrip = DateTime.parse("2019-08-06 16:05:04Z");
+    var _timeBetween = _timeOfTrip.difference(_timeAtual);
+    var _i = _timeBetween.inDays;
+    return Container(
+      child: Text("$_i" "days"),
+    );
+  }
+}
+
+// ---------fim pagina contagem------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+class BodyLayout extends StatelessWidget {
+  @override
+  Widget build(BuildContext context) {
+    return _myListView(context);
+  }
+}
+
+//com separador
+Widget _myListView(BuildContext context) {
+  return ListView.separated(
+    itemCount: 100,
+    controller: ScrollController(initialScrollOffset: 1000),
+// controller: ScrollController(initialScrollOffset: 20),
+    itemBuilder: (context, index) {
+      return ListTile(
+        title: LineWithHours(index: index),
+        // contentPadding: EdgeInsets.all(0.0),
+      );
+    },
+    // itemBuilder: (context, index) => Padding(
+    //     padding: EdgeInsets.all(8.0),
+    //     child: Center(child: Text("Index $index")),
+    //   ),
+    separatorBuilder: (context, index) {
+      // return Divider(
+      //   color: Colors.black,
+      //   // indent: 1.0,
+      // );
+      return Container(
+        color: Colors.grey,
+        height: 0.5,
+      );
+    },
+  );
+}
+
+var timeFromUtcSydney = 10;
+var timeFromUtcFlorida = -4;
+
+addTimeTop(_addHours, localzacao, {returnDate = false}) {
+  var _nowTime = new DateTime.now().toUtc();
+
+  var _returnAddTime;
+  _nowTime = _nowTime.add(new Duration(hours: _addHours));
+
+  if (localzacao == "Sydney") {
+    _nowTime = _nowTime.add(new Duration(hours: timeFromUtcSydney));
+  }
+  ;
+
+  if (localzacao == "Florida") {
+    _nowTime = _nowTime.add(new Duration(hours: timeFromUtcFlorida));
+  }
+  ;
+ 
+  var formatter;
+  var formatted;
+  //if ask to retur in a tade tipe or formated text
+  if (returnDate == false) {
+    // returnDate = false
+    if (_addHours == 0) {
+      formatter = DateFormat('HH:mm');
+      formatted = formatter.format(_nowTime);
+      _returnAddTime = "$formatted     $_addHours.h";
+    } else {
+      formatter = DateFormat('HH:00');
+      formatted = formatter.format(_nowTime);
+      _returnAddTime = "$formatted     $_addHours.h";
+    }
+  } else {
+    // returnDate = true;
+    _returnAddTime = _nowTime; //retorna no formato de data
+  }
+
+  return _returnAddTime;
+}
+
+addTimeBotom(_addHours, localzacao) {
+  var _nowTime = new DateTime.now().toUtc();
+
+  var _returnAddTime;
+  _nowTime = _nowTime.add(new Duration(hours: _addHours));
+
+  if (localzacao == "Sydney") {
+    _nowTime = _nowTime.add(new Duration(hours: timeFromUtcSydney));
+  }
+  ;
+
+  if (localzacao == "Florida") {
+    _nowTime = _nowTime.add(new Duration(hours: timeFromUtcFlorida));
+  }
+  ;
+
+  var formatter;
+  var formatted;
+
+  formatter = new DateFormat('EEE dd');
+  formatted = formatter.format(_nowTime);
+  _returnAddTime = "$formatted";
+
+  return _returnAddTime;
+}
+
+iconeLm(_addHours, localzacao) {
+  var _icone;
+
+  if (_addHours == 0) {
+    if (localzacao == "Florida") {
+      // _icone = Container();
+      _icone = Image.asset(
+        '../direita.jpg',
+        scale: 7,
+      );
+    } else {
+      //sydney
+      _icone = Image.asset(
+        '../esquerda.jpg',
+        scale: 7,
+      );
+    }
+  } else {
+    _icone = Container();
+  }
+
+  return _icone;
+}
+
+class LineWithHours extends StatelessWidget {
+  LineWithHours({this.index});
+
+  minhaFuncao(index) {
+    // print("rodou a funcao com $index");
+    var _horas = index - 24;
+    var texto1Esquerd;
+    var texto2Esquerd;
+    var texto1Direita;
+    var texto2Direita;
+    var _corDeFundo;
+    if (_horas == 0) {
+      _corDeFundo = Colors.red[100];
+    } else {
+      _corDeFundo = Colors.grey[100];
+    }
+
+    texto1Esquerd = addTimeTop(_horas, "Sydney");
+    texto2Esquerd = addTimeBotom(_horas, "Sydney");
+    texto1Direita = addTimeTop(_horas, "Florida");
+    texto2Direita = addTimeBotom(_horas, "Florida");
+
+    // return Text('aa $index');
+    return new GestureDetector(
+        onTap: () {
+          print("Container clicked");
+        },
+        child: new Container(
+          color: _corDeFundo,
+          child: Row(
+            mainAxisAlignment: MainAxisAlignment.spaceAround,
+            children: <Widget>[
+              iconeLm(_horas, "Sydney"),
+              Column(
+                // coluna aqui
+                children: <Widget>[
+                  Text(
+                    texto1Esquerd,
+                    style: TextStyle(fontWeight: FontWeight.bold),
+                  ),
+                  Text(
+                    texto2Esquerd,
+                    style: TextStyle(
+                      color: Colors.black.withOpacity(0.6),
+                    ),
+                  )
+                ],
+              ),
+              Column(
+                // coluna la
+                children: <Widget>[
+                  Text(
+                    texto1Direita,
+                    style: TextStyle(fontWeight: FontWeight.bold),
+                  ),
+                  Text(
+                    texto2Direita,
+                    style: TextStyle(
+                      color: Colors.black.withOpacity(0.6),
+                    ),
+                  )
+                ],
+              ),
+              iconeLm(_horas, "Florida"),
+            ],
+          ),
+        ));
+
+    // // container
+
+    // //fim do container
+  }
+
+  final index;
+  @override
+  Widget build(BuildContext context) {
+    return minhaFuncao(index);
+  }
+}
+
+// void mudaPagina() {
+
+//   var context;
+//   Navigator.push(
+//     context,
+//     new MaterialPageRoute(builder: (context) => new SecondScreen()),
+//   );
+// }

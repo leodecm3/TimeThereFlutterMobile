@@ -43,7 +43,7 @@ EXIT
 ECHO ON
 
 ::crio a pasta para publicar
-mkdir .\docs
+::mkdir .\docs
 
 ::copio usando 2 metodos, pq as vezes o xcopy nao copia arquivo aberto
 ::xcopy ".\build" ".\docs" /e /y
