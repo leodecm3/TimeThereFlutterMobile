@@ -22,9 +22,9 @@ I live in Sydney and the time zone is very different, I use this system to know:
 
 ## Screenshot: 
 
-![](C:\Dropbox\Dropbox\z-esc\Leonardo particular\projetosGIT\GIT_20190705170634_TimeThereFlutterWeb\time_there_flutter_web\Screenshot\Screenshot_1562587146.png)
+![](https://github.com/leodecm3/TimeThereFlutterMobile/blob/master/Screenshot/Screenshot_1562587146.png)
 
-![Screenshot_1562587162](C:\Dropbox\Dropbox\z-esc\Leonardo particular\projetosGIT\GIT_20190705170634_TimeThereFlutterWeb\time_there_flutter_web\Screenshot\Screenshot_1562587162.png)
+![Screenshot_1562587162](https://github.com/leodecm3/TimeThereFlutterMobile/blob/master/Screenshot/Screenshot_1562587162.png)
 
 
 
