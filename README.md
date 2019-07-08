@@ -33,7 +33,7 @@ I live in Sydney and the time zone is very different, I use this system to know:
 
 ## Getting Started
 
-Flutter is under development, so in case getting problems to run, simple create a new project, and replace the files
+Flutter is under development, so if you run into any problems, simple create a new project, and replace the files:
 
 ```
 lib\main.dart
