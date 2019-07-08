@@ -38,18 +38,28 @@ Flutter is under development, so in case getting problems to run, simple create 
 ```
 lib\main.dart
 lib\contdownpag.dart
+assets\direita-usa.jpg
+assets\esquerda-aus.jpg
 ```
 
-Also I use a small dependency to, include it in `pubspec.yaml` :
+Also include it in `pubspec.yaml` :
 
 ```yaml
 dependencies:
   intl: ^0.15.7
+
+flutter:
+  assets:
+    - assets/direita-usa.jpg
+    - assets/esquerda-aus.jpg
 ```
+
+- `intl: ^0.15.7` is used to get date formation
 
 
 
 ## Running the tests
+
 Same as any flutter code:
 
 ```bash
