@@ -1,115 +1,72 @@
-# Project Title
+# Time There using Flutter for Mobile
 
-<!--
- One Paragraph of project description goes here
-  -->
+I originally created this app to count how many days it takes for my trip to the USA.
 
-this project is under development
+I live in Sydney and the time zone is very different, I use this system to know:
+
+- what time is it now
+
+- what hours were a few hours behind (for example when I received a certain email)
+
+- what hours will be in X hours (in case I need to schedule myself for an appointment)
+
+  
+
+## For Web version look at: 
+
+- https://github.com/leodecm3/time_there_flutter_web
+
+- https://leodecm3.github.io/time_there_flutter_web/
+
+  
+
+## Screenshot: 
+
+![](C:\Dropbox\Dropbox\z-esc\Leonardo particular\projetosGIT\GIT_20190705170634_TimeThereFlutterWeb\time_there_flutter_web\Screenshot\Screenshot_1562587146.png)
+
+![Screenshot_1562587162](C:\Dropbox\Dropbox\z-esc\Leonardo particular\projetosGIT\GIT_20190705170634_TimeThereFlutterWeb\time_there_flutter_web\Screenshot\Screenshot_1562587162.png)
+
+
+
+- 
 
 ## Getting Started
 
-<!-- 
-These instructions will get you a copy of the project up and running on your local machine for development and testing purposes. See deployment for notes on how to deploy the project on a live system. 
--->
-
-### Prerequisites
-
-<!-- 
-What things you need to install the software and how to install them
+Flutter is under development, so in case getting problems to run, simple create a new project, and replace the files
 
 ```
-Give examples
-```
--->
-
- ### Installing
-<!--
-A step by step series of examples that tell you how to get a development env running
-
-Say what the step will be
-
-```
-Give the example
+lib\main.dart
+lib\contdownpag.dart
 ```
 
-And repeat
+Also I use a small dependency to, include it in `pubspec.yaml` :
 
-```
-until finished
+```yaml
+dependencies:
+  intl: ^0.15.7
 ```
 
-End with an example of getting some data out of the system or using it for a little demo
- -->
+
+
 ## Running the tests
-<!-- 
-Explain how to run the automated tests for this system
- -->
-### Break down into end to end tests
-<!-- 
-Explain what these tests test and why
+Same as any flutter code:
 
+```bash
+flutter run
 ```
-Give an example
-```
--->
-### And coding style tests
-<!-- 
-Explain what these tests test and why
 
-```
-Give an example
-```
--->
-## Deployment
-<!-- 
-Add additional notes about how to deploy this on a live system 
--->
-## Built With
-<!-- 
-* [Dropwizard](http://www.dropwizard.io/1.0.2/docs/) - The web framework used
-* [Maven](https://maven.apache.org/) - Dependency Management
-* [ROME](https://rometools.github.io/rome/) - Used to generate RSS Feeds 
--->
-## Contributing
-<!-- 
-Please read [CONTRIBUTING.md](https://gist.github.com/PurpleBooth/b24679402957c63ec426) for details on our code of conduct, and the process for submitting pull requests to us. 
--->
-## Versioning
-<!-- 
-We use [SemVer](http://semver.org/) for versioning. For the versions available, see the [tags on this repository](https://github.com/your/project/tags). 
- -->
-## Authors
-<!-- 
-* **Billie Thompson** - *Initial work* - [PurpleBooth](https://github.com/PurpleBooth)
-
-See also the list of [contributors](https://github.com/your/project/contributors) who participated in this project.
- -->
 ## License
-<!-- 
-This project is licensed under the MIT License - see the [LICENSE.md](LICENSE.md) file for details
- -->
-## Acknowledgments
-<!-- 
-* Hat tip to anyone whose code was used
-* Inspiration
-* etc
- -->
 
-
-
-<!-- this template was created using https://gist.github.com/PurpleBooth/109311bb0361f32d87a2 -->
-""GIT_20190708192944_TimeThereFlutterMobile""   
-"TimeThereFlutterMobile"  
-
-
-
-
-
-
+This project is licensed see the [LICENSE.md](LICENSE.md) file for details
 
 
 
 # time_there_flutter_mobile
+
+""GIT_20190708192944_TimeThereFlutterMobile""   
+"TimeThereFlutterMobile"  
+
+<!-- 
 
 A new Flutter project.
 
@@ -125,3 +82,5 @@ A few resources to get you started if this is your first Flutter project:
 For help getting started with Flutter, view our
 [online documentation](https://flutter.dev/docs), which offers tutorials,
 samples, guidance on mobile development, and a full API reference.
+
+ -->
