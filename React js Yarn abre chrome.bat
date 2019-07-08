@@ -1,2 +1,0 @@
-call yarn start
-pause
