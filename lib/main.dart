@@ -255,13 +255,13 @@ iconeLm(_addHours, localzacao) {
     if (localzacao == "Florida") {
       // _icone = Container();
       _icone = Image.asset(
-        '../direita.jpg',
+        '../direita-usa.jpg',
         scale: 7,
       );
     } else {
       //sydney
       _icone = Image.asset(
-        '../esquerda.jpg',
+        '../esquerda-aus.jpg',
         scale: 7,
       );
     }
