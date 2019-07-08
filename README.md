@@ -22,13 +22,13 @@ I live in Sydney and the time zone is very different, I use this system to know:
 
 ## Screenshot: 
 
-![](https://github.com/leodecm3/TimeThereFlutterMobile/blob/master/Screenshot/Screenshot_1562587146.png)
+![](https://github.com/leodecm3/TimeThereFlutterMobile/blob/master/Screenshot/Screenshot_1562587146.png){ width=50% }
 
-![Screenshot_1562587162](https://github.com/leodecm3/TimeThereFlutterMobile/blob/master/Screenshot/Screenshot_1562587162.png)
+![Screenshot_1562587162](https://github.com/leodecm3/TimeThereFlutterMobile/blob/master/Screenshot/Screenshot_1562587162.png){ width=50% }
 
 
 
-- 
+
 
 ## Getting Started
 
